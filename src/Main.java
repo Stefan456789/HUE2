@@ -72,6 +72,9 @@ public class Main {
                     "4 - Exit");
             int type = Integer.parseInt(s.nextLine());
 
+            if (type == 4)
+                return;
+
             Number x = new Number();
             Number y= new Number();
             System.out.println("Enter Number x a >");
@@ -93,56 +96,13 @@ public class Main {
             System.out.println("Solution");
             switch (type) {
                 case 1:
-                    switch (op) {
-                        case 1:
-                            System.out.println(rel.add(x,y));
-                            break;
-                        case 2:
-                            System.out.println(rel.subtract(x,y));
-                            break;
-                        case 3:
-                            System.out.println(rel.multiply(x,y));
-                            break;
-                        case 4:
-                            System.out.println(rel.divide(x,y));
-                            break;
-                        case 5:
-                            break;
-                    }
+                    test(rel, x, y, op);
                     break;
                 case 2:
-                    switch (op) {
-                        case 1:
-                            System.out.println(vec.add(x,y));
-                            break;
-                        case 2:
-                            System.out.println(vec.subtract(x,y));
-                            break;
-                        case 3:
-                            System.out.println(vec.multiply(x,y));
-                            break;
-                        case 4:
-                            System.out.println(vec.divide(x,y));
-                        case 5:
-                            break;
-                    }
+                    test(vec, x, y, op);
                     break;
                 case 3:
-                    switch (op) {
-                        case 1:
-                            System.out.println(com.add(x,y));
-                            break;
-                        case 2:
-                            System.out.println(com.subtract(x,y));
-                            break;
-                        case 3:
-                            System.out.println(com.multiply(x,y));
-                            break;
-                        case 4:
-                            System.out.println(com.divide(x,y));
-                        case 5:
-                            break;
-                    }
+                    test(com, x, y, op);
                     break;
                 case 4:
                     return;
@@ -154,6 +114,24 @@ public class Main {
         }
 
 
+    }
+
+    private static void test(AbstractCalculator vec, Number x, Number y, int op) {
+        switch (op) {
+            case 1:
+                System.out.println(vec.add(x,y));
+                break;
+            case 2:
+                System.out.println(vec.subtract(x,y));
+                break;
+            case 3:
+                System.out.println(vec.multiply(x,y));
+                break;
+            case 4:
+                System.out.println(vec.divide(x,y));
+            case 5:
+                break;
+        }
     }
 
     static boolean isPrime(int n)
