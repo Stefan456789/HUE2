@@ -91,18 +91,62 @@ public class Main {
             int op = Integer.parseInt(s.nextLine());
             System.out.println("----------------");
             System.out.println("Solution");
-
             switch (type) {
                 case 1:
+                    switch (op) {
+                        case 1:
+                            System.out.println(rel.add(x,y));
+                            break;
+                        case 2:
+                            System.out.println(rel.subtract(x,y));
+                            break;
+                        case 3:
+                            System.out.println(rel.multiply(x,y));
+                            break;
+                        case 4:
+                            System.out.println(rel.divide(x,y));
+                            break;
+                        case 5:
+                            break;
+                    }
                     break;
                 case 2:
+                    switch (op) {
+                        case 1:
+                            System.out.println(vec.add(x,y));
+                            break;
+                        case 2:
+                            System.out.println(vec.subtract(x,y));
+                            break;
+                        case 3:
+                            System.out.println(vec.multiply(x,y));
+                            break;
+                        case 4:
+                            System.out.println(vec.divide(x,y));
+                        case 5:
+                            break;
+                    }
                     break;
                 case 3:
+                    switch (op) {
+                        case 1:
+                            System.out.println(com.add(x,y));
+                            break;
+                        case 2:
+                            System.out.println(com.subtract(x,y));
+                            break;
+                        case 3:
+                            System.out.println(com.multiply(x,y));
+                            break;
+                        case 4:
+                            System.out.println(com.divide(x,y));
+                        case 5:
+                            break;
+                    }
                     break;
                 case 4:
-                    break;
+                    return;
             }
-
             System.out.println("----------------");
 
 
