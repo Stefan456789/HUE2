@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class NumberTester {
@@ -8,7 +10,11 @@ public class NumberTester {
     private final Scanner s;
 
     public NumberTester(String filename){
-        s = new Scanner(filename);
+        try {
+            s = new Scanner(new File(filename));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void setOddEvenTester(NumberTest oddTester){
@@ -32,19 +38,19 @@ public class NumberTester {
                 case "1":
                     result = oddTester.testNumber(Integer.parseInt(input[1]));
                     if (!result)
-                        System.out.println("NOT ");
+                        System.out.print("NOT ");
                     System.out.println("EVEN");
                     break;
                 case "2":
                     result = primeTester.testNumber(Integer.parseInt(input[1]));
                     if (!result)
-                        System.out.println("NO ");
+                        System.out.print("NO ");
                     System.out.println("PRIME");
                     break;
                 case "3":
                     result = palindromeTester.testNumber(Integer.parseInt(input[1]));
                     if (!result)
-                        System.out.println("NO ");
+                        System.out.print("NO ");
                     System.out.println("PALINDROME");
                     break;
             }
